@@ -1,0 +1,52 @@
+{
+  "root": "apps/rps-bot",
+  "sourceRoot": "apps/rps-bot/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/rps-bot",
+        "main": "apps/rps-bot/src/main.ts",
+        "tsConfig": "apps/rps-bot/tsconfig.app.json",
+        "assets": ["apps/rps-bot/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/rps-bot/src/environments/environment.ts",
+              "with": "apps/rps-bot/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:execute",
+      "options": {
+        "buildTarget": "rps-bot:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/rps-bot/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/rps-bot"],
+      "options": {
+        "jestConfig": "apps/rps-bot/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
