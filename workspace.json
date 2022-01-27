@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
-    "rps-bot": "apps/rps-bot"
+    "rps-bot": "apps/rps-bot",
+    "worker": "apps/worker",
+    "workflows": "libs/workflows"
   }
 }

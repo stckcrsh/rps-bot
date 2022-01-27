@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@rps-bot/workflows/activities": ["libs/workflows/src/activities.ts"],
+      "@rps-bot/workflows/workflows": ["libs/workflows/src/workflows.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
