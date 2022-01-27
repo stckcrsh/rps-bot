@@ -10,7 +10,7 @@ import { WorkflowService } from './workflow.service';
   imports: [
     DiscordModule.forRootAsync({
       useFactory: () => ({
-        token: 'OTMyODU2MDg4NzIwNzExNzEw.YeZD7w.-I8j71Y9S5hhBFIJ8ypLwxcfywI',
+        token: process.env.DISCORD_TOKEN,
         commandPrefix: '%',
         // allowGuilds: ['748351850050486423'],
         // denyGuilds: [],
